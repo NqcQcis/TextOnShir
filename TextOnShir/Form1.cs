@@ -47,5 +47,30 @@ namespace TextOnShir
         {
             richTextBox1.SelectedText = Clipboard.GetText();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = richTextBox1.Size.Width;
+            label2.Text = a.ToString();
+            string s = richTextBox1.Text;
+            char f = '\n';
+            int max = 0;
+            String[] substrings = s.Split(f);
+            for (int i = 0; i < substrings.Length; i++)
+            {
+                if (substrings[i].Length > max)
+                {
+                    max = i;
+                }
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.Text = "Вызвать форму 2";
+            Form2 Form2 = new Form2();
+            Form2.Show();
+        }
     }
 }
